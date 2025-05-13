@@ -17,12 +17,44 @@ import logo6 from './assets/logos/logo6.png';
 import IllustrationRafiki from './assets/rafiki.svg';
 import IllustrationPana from './assets/pana.svg';
 
+//IMOPORTERER COMPONENTER
 import './App.css'
 import Hero from './components/hero';
 import Headline from './components/headline';
 import CommunityCard from './components/CommunityCard';
 import IconLink from './components/IconLink';
 import Button from './components/button';
+import ProductGalleryCard from './components/ImageProductCard';
+import Facts from './components/Facts.jsx';
+
+//IMPORT DATA
+import { GalleryCardData } from './data.js';
+import { FactData } from './data.js';
+
+/*
+import image1 from './assets/image1.png';
+import image2 from './assets/image2.png';
+import image3 from './assets/image3.png';
+
+
+const GalleryCardData = [
+  {
+      image: image1,
+      link: "#",
+      text: "Creating Streamlined Safeguarding Processes with OneRen",
+  },
+  {
+    image: image2,
+    link: "#",
+    text: "What are your safeguarding responsibilities and how can you manage them?",
+  },
+  {
+    image: image3,
+    link: "#",
+    text: "Revamping the Membership Model with Triathlon Australia",
+  }
+    ]
+*/
 
 export default function App() {
 
@@ -98,7 +130,13 @@ export default function App() {
       </Headline>
 
       <div>
-        ikoner og tal(componenter)
+        {FactData.map(data => (
+        <Facts
+        image={data.image}
+        link={data.link}
+        text={data.text}
+        />
+        ))}
       </div>
     </section>
 
@@ -121,9 +159,32 @@ export default function App() {
     </section>
 
     <section className='section__product-gallery'>
-    
+      <Headline
+        headline="Caring is the new marketing"
+        text="The Nexcent blog is the best place to read about the latest membership insights,
+        trends and more. See who's joining the community,
+        read about how our community are increasing their membership income and lot's more.​"
+        >
+      </Headline>
+      {GalleryCardData.map(card => (
+      <ProductGalleryCard
+      image={card.image}
+      link={card.link}
+      text={card.text}
+      />
+      ))}
     </section>
+
+    <div>
+      <Headline
+        headline="Pellentesque suscipit fringilla libero eu."
+        >
+      </Headline>
+      <Button>Get a Demo</Button>
+    </div>
   
+    
+
     </>
   )
 }
