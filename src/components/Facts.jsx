@@ -1,13 +1,13 @@
 
 
-export default function Facts({icon, value, category }) {
+export default function Facts({image, value, category }) {
 
     return (
       <>
       <div className="facts">
-        <img src={icon} alt="icon" />
-        <p>{value}</p>
-        <p>{category}</p>
+        <img src={image} alt="icon" />
+        <p className="value">{value}</p>
+        <p className="category">{category}</p>
      </div>
       </>
     )

@@ -1,0 +1,40 @@
+
+.hero {
+    display: grid;
+    grid-template-columns: 7fr 4.2fr;
+    justify-self: center;
+    align-items: center;
+   padding: 6em 8em;
+    background-color: #F5F7FA;
+    margin: 0;
+
+    h1, p, button {
+        grid-column: 1;
+    }
+
+    h1{
+        font-family: "inter", sans-serif;
+        font-size: 64px;
+        color: #4D4D4D;
+
+        span {
+            color: #4CAF4F;
+        }
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        height: 3em;
+        width: fit-content;
+
+    }
+
+    img {
+        grid-column: 2;
+        grid-row: 1/4;
+    }
+
+}

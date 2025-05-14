@@ -1,0 +1,160 @@
+
+.section__clients {
+
+  .clientsIcons {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 2em auto;
+    justify-items: center;
+  }
+
+}
+
+.section__ArticleCards {
+  display: grid;
+  grid-template-columns: repeat(3, 2.5fr);
+  justify-items: center;
+  column-gap: 7em;
+
+
+  .headline-center {
+    grid-column: span 3;
+    justify-self: center;
+
+  }
+
+}
+
+.section__helping {
+  background-color: #F5F7FA;
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  padding: 6em 4em;
+  margin: unset;
+  column-gap: 6em;
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .factsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3em;
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+
+      img {
+        grid-column: 1;
+        grid-row: span 2;
+        align-self: center;
+      }
+
+      .value {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .category {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+///////
+
+.section__product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2em;
+
+  article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    transition: transform 0.3s ease;
+
+    img {
+      grid-row: 1/4;
+      grid-column: 1;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    a{
+      box-shadow: 0 8px 16px 0 #ABBED1;
+      background: #F5F7FA;
+      grid-column: 1;
+      grid-row: 3/5;
+      width: 85%;
+      order: 1;
+      justify-self: center;
+      border-radius: 10px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      //align-content: center;
+      text-align: center;
+
+      .text {
+        font-size: 20px;
+        font-weight: 500;
+        padding-bottom: 2em;
+        margin: 0 1em;
+      }
+
+      .readmore {
+        color: #4CAF4F;
+        font-size: 20px;
+      }
+
+
+    }
+
+  }
+
+  .headline-center {
+    grid-column: span 3;
+
+    p {
+      width: 50%;
+      justify-self: center;
+      text-align: center;
+    }
+  }
+
+
+
+}
+
+
+
+
+///////
+
+.footer-section {
+  display: grid;
+  justify-items: center;
+  background-color: #F5F7FA;
+  padding: 6em;
+
+  .headline {
+    font-size: 64px;
+    width: 75%;
+    justify-self: center;
+    margin-bottom: 0.5em;
+    text-align: center;
+
+  }
+}
+

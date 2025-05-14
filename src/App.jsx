@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import './style/style.scss';
+import './App.scss';
+
 //ICONS
 import MemberIcon from './assets/icons/memberIcon.svg';
 import NationalIcon from './assets/icons/nationalIcon.png';
@@ -18,18 +21,20 @@ import IllustrationRafiki from './assets/rafiki.svg';
 import IllustrationPana from './assets/pana.svg';
 
 //IMOPORTERER COMPONENTER
-import './App.css'
 import Hero from './components/hero';
 import Headline from './components/headline';
-import CommunityCard from './components/CommunityCard';
+import CenterHeadline from './components/CenterHeadline.jsx';
+import CommunityCard from './components/CommunityCard.jsx';
+import ArticleCard from './components/ArticleCard';
+import './components/ArticleCard.scss';
 import IconLink from './components/IconLink';
 import Button from './components/button';
 import ProductGalleryCard from './components/ImageProductCard';
 import Facts from './components/Facts.jsx';
 
 //IMPORT DATA
-import { GalleryCardData } from './data.js';
-import { FactData } from './data.js';
+import { GalleryCardData, FactData  } from './data';
+
 
 /*
 import image1 from './assets/image1.png';
@@ -61,14 +66,16 @@ export default function App() {
 
   return (
     <>
+    <main>
+
     <Hero />
 
     <section className='section__clients'>
-      <Headline
+      <CenterHeadline
       headline="Our Clients"
       text="We have been working with some Fortune 500+ clients"
       />
-       <div>
+       <div className='clientsIcons'>
       <IconLink link="#" icon={logo1}/>
       <IconLink link="#" icon={logo2}/>
       <IconLink link="#" icon={logo3}/>
@@ -79,8 +86,8 @@ export default function App() {
       </div>
     </section>
 
-    <section className='section__communityCards'>
-      <Headline
+    <section className='section__ArticleCards'>
+      <CenterHeadline
       headline="Manage your entire community in a single system"
       text="Who is Nextcent suitable for?"
       />
@@ -90,7 +97,6 @@ export default function App() {
       headline="Membership Organisations"
       text="Our membership management software provides full automation of membership renewals and payments"
       >
-      // eventuelle children
       </CommunityCard>
 
       <CommunityCard
@@ -109,7 +115,7 @@ export default function App() {
     </section>
 
     <section className='section__Artikel'>
-      <CommunityCard
+      <ArticleCard
       image={IllustrationRafiki}
       headline="The unseen of spending three years at Pixelgrade"
       text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum.
@@ -117,11 +123,11 @@ export default function App() {
       Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor.
       Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum pulvinar odio."
       >
-      </CommunityCard>
-      <Button>Learn More</Button>
+      </ArticleCard>
     </section>
 
     <section className='section__helping'>
+      
       <Headline
       headline= "Helping a local "
       text="We reached here with our hard work and dedication"
@@ -129,12 +135,13 @@ export default function App() {
         business reinvent itself
       </Headline>
 
-      <div>
+      <div className='factsContainer'>
         {FactData.map(data => (
         <Facts
+        key ={data.id}
         image={data.image}
-        link={data.link}
-        text={data.text}
+        value={data.value}
+        category={data.category}
         />
         ))}
       </div>
@@ -142,7 +149,7 @@ export default function App() {
 
 
      <section className='section__Artikel'>
-      <CommunityCard
+      <ArticleCard
       image={IllustrationPana}
       headline="How to design your site footer like we did"
       text="Donec a eros justo. Fusce egestas tristique ultrices.
@@ -154,20 +161,21 @@ export default function App() {
       Praesent felis est, finibus et nisi ac, hendrerit venenatis libero.
       Donec consectetur faucibus ipsum id gravida."
       >
-      </CommunityCard>
-      <Button>Learn More</Button>
+      </ArticleCard>
     </section>
 
     <section className='section__product-gallery'>
-      <Headline
+      <CenterHeadline
         headline="Caring is the new marketing"
         text="The Nexcent blog is the best place to read about the latest membership insights,
         trends and more. See who's joining the community,
         read about how our community are increasing their membership income and lot's more.​"
         >
-      </Headline>
+      </CenterHeadline>
+
       {GalleryCardData.map(card => (
       <ProductGalleryCard
+      key={card.id}
       image={card.image}
       link={card.link}
       text={card.text}
@@ -175,7 +183,7 @@ export default function App() {
       ))}
     </section>
 
-    <div>
+    <div className='footer-section'>
       <Headline
         headline="Pellentesque suscipit fringilla libero eu."
         >
@@ -183,6 +191,8 @@ export default function App() {
       <Button>Get a Demo</Button>
     </div>
   
+    </main>
+    
     
 
     </>

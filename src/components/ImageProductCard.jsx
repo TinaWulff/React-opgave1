@@ -6,10 +6,10 @@ export default function ProductGalleryCard({image, link, text}) {
     return (
       <>
      <article>
-      <img src={image} alt="illustrative icon" />
+      <img src={image} alt="illustrative image" />
       <a href={link}>
         <div>
-        <p>{text}</p>
+        <p className="text">{text}</p>
         <p className="readmore">Read more</p>
         </div>
       </a>
